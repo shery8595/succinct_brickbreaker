@@ -20,19 +20,19 @@
         }
         .controller-container {
             position: absolute;
-            left: 150px;
+            left: 50px;
             top: calc(50% - 120px);
             transform: translateY(-50%) rotate(-40deg);
             z-index: 1;
         }
         .controller-container.right {
             left: auto;
-            right: -65px;
+            right: 50px;
             top: calc(50% - 80px);
             transform: translateY(-50%) rotate(40deg);
         }
         .controller-container img {
-            width: 250px;
+            width: 150px;
             height: auto;
             filter: drop-shadow(0 0 20px rgba(0, 0, 0, 0.3));
             animation: float 3s ease-in-out infinite;
@@ -209,8 +209,8 @@
         const BRICK_HEIGHT = 20;
         const BRICK_PADDING = 6;
         const BRICK_OFFSET_TOP = 60;
-        const BRICK_OFFSET_LEFT = 50;
-        const BRICK_COLUMNS = 14;
+        const BRICK_OFFSET_LEFT = 120;
+        const BRICK_COLUMNS = 12;
         const BRICK_ROWS = 8;
         const PADDLE_SPEED = 8;
         const POWERUP_DURATION = 5000; // 5 seconds
