@@ -42,13 +42,15 @@
             box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
             border-radius: 12px;
             margin-top: 40px;
-            margin-left: 100px; /* Add space for controller */
+            margin-left: 100px;
         }
         canvas {
             background: linear-gradient(to bottom, #FFB6C1, #DDA0DD);
             border: 4px solid #9370DB;
             border-radius: 8px;
             box-shadow: inset 0 0 20px rgba(147, 112, 219, 0.5);
+            width: 800px;
+            height: 600px;
         }
         #title {
             display: none;
@@ -200,16 +202,16 @@
         const levelElement = document.getElementById('level');
 
         // Game constants
-        const PADDLE_WIDTH = 120;
-        const PADDLE_HEIGHT = 20;
-        const BALL_RADIUS = 15;
-        const BRICK_WIDTH = 55;
-        const BRICK_HEIGHT = 25;
-        const BRICK_PADDING = 8;
-        const BRICK_OFFSET_TOP = 80;
-        const BRICK_OFFSET_LEFT = 65;
+        const PADDLE_WIDTH = 100;
+        const PADDLE_HEIGHT = 15;
+        const BALL_RADIUS = 10;
+        const BRICK_WIDTH = 45;
+        const BRICK_HEIGHT = 20;
+        const BRICK_PADDING = 6;
+        const BRICK_OFFSET_TOP = 60;
+        const BRICK_OFFSET_LEFT = 50;
         const BRICK_COLUMNS = 14;
-        const BRICK_ROWS = 10;
+        const BRICK_ROWS = 8;
         const PADDLE_SPEED = 8;
         const POWERUP_DURATION = 5000; // 5 seconds
         const POWERUP_CHANCE = 0.2; // 20% chance to drop from brick
