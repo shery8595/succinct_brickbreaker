@@ -42,15 +42,16 @@
             box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
             border-radius: 12px;
             margin-top: 40px;
-            margin-left: 100px;
+            margin-left: auto;
+            margin-right: auto;
         }
         canvas {
             background: linear-gradient(to bottom, #FFB6C1, #DDA0DD);
             border: 4px solid #9370DB;
             border-radius: 8px;
             box-shadow: inset 0 0 20px rgba(147, 112, 219, 0.5);
-            width: 800px;
-            height: 600px;
+            width: 1000px;
+            height: 700px;
         }
         #title {
             display: none;
@@ -209,7 +210,7 @@
         const BRICK_HEIGHT = 20;
         const BRICK_PADDING = 6;
         const BRICK_OFFSET_TOP = 60;
-        const BRICK_OFFSET_LEFT = 145;
+        const BRICK_OFFSET_LEFT = 222.5; // Changed from 145 to center the bricks
         const BRICK_COLUMNS = 11;
         const BRICK_ROWS = 8;
         const PADDLE_SPEED = 8;
@@ -257,12 +258,12 @@
             HARD: { hits: 3, color: "#4B0082", border: "#8A2BE2", glow: "#BA55D3" }
         };
 
-        // Level layouts
+        // Level layouts - now perfectly symmetrical and centered
         const LEVEL_LAYOUTS = [
             // Level 1 - Symmetric flower pattern
             [
-                [0,0,1,1,1,1,1,1,1,1,1],
-                [0,1,1,1,1,1,1,1,1,1,1],
+                [0,0,1,1,1,1,1,1,1,0,0],
+                [0,1,1,1,1,1,1,1,1,1,0],
                 [1,1,1,0,0,1,0,0,1,1,1],
                 [1,1,0,0,0,1,0,0,0,1,1],
                 [1,1,0,0,1,1,1,0,0,1,1],
@@ -270,18 +271,18 @@
                 [1,1,1,0,0,1,0,0,1,1,1],
                 [0,1,1,1,1,1,1,1,1,1,0]
             ],
-            // Level 2 - Symmetric spiral pattern
+            // Level 2 - Symmetric diamond pattern
             [
-                [2,2,2,2,2,2,2,2,2,2,2],
-                [2,0,0,0,0,0,0,0,0,0,2],
-                [2,0,2,2,2,2,2,2,2,0,2],
-                [2,0,2,0,0,0,0,0,2,0,2],
-                [2,0,2,0,2,2,2,0,2,0,2],
-                [2,0,2,0,0,0,0,0,2,0,2],
-                [2,0,2,2,2,2,2,2,2,0,2],
-                [2,0,0,0,0,0,0,0,0,0,2]
+                [0,0,0,0,2,2,2,0,0,0,0],
+                [0,0,0,2,2,2,2,2,0,0,0],
+                [0,0,2,2,2,2,2,2,2,0,0],
+                [0,2,2,2,0,0,0,2,2,2,0],
+                [2,2,2,0,0,0,0,0,2,2,2],
+                [0,2,2,2,0,0,0,2,2,2,0],
+                [0,0,2,2,2,2,2,2,2,0,0],
+                [0,0,0,2,2,2,2,2,0,0,0]
             ],
-            // Level 3 - Symmetric mandala pattern
+            // Level 3 - Symmetric checkerboard pattern
             [
                 [3,3,3,0,0,3,0,0,3,3,3],
                 [3,0,3,3,0,3,0,3,3,0,3],
@@ -330,7 +331,7 @@
                 this.y = -20;
                 this.speed = 2;
                 this.radius = 10;
-                this.color = type === 'largePaddle' ? '#FFD700' : '#FF69B4'; // Changed colors to gold and hot pink
+                this.color = type === 'largePaddle' ? '#FFD700' : '#FF69B4';
             }
 
             update() {
@@ -751,4 +752,4 @@
         draw();
     </script>
 </body>
-</html> 
+</html>
